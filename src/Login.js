@@ -1,16 +1,20 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { Link, Redirect } from 'react-router-dom'
+import { Link, NavLink, Redirect } from 'react-router-dom'
 import Dashboard from "./Dashboard";
+import { useDispatch, useSelector } from 'react-redux';
+import { loginact } from "./actions/index";
+import logintodash from './reducers/logon';
+import store from './store';
+
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState('');
-    const [tokenid, setTokenid] = useState("");
-    const [tempdata, setTempdata] = useState([]);
-    const [userdata, setUserdata] = useState([]);
     const config = { headers: { 'Content-Type': 'application/json' }};
+    const token = useSelector(state => state.logintodash);
+    const dispatch = useDispatch();
+    var result;
     
 
 
@@ -20,29 +24,40 @@ const Login = () => {
             alert("Field Shouldn't be blank!!")
         }
         else{
-            console.log("Login: ",email,password);
+            // console.log("Login: ",email,password);
             axios.post("/auth/login",{
                 email,
                 password,
             },config)
             .then(res => {
-                console.log("Api response data:",res.data);
-                setUserdata(res.data.data);
-                // console.log("UserData",userdata);
-                // setTokenid(res.data.meta.token);
-                // console.log("TokenId",tokenid);      
-                if(res.data){
-                    return(
-                        <>
-                            <Dashboard/>
-                        </>
-                    )
-                }
+                // console.log("Api response data:",res.data);
+                result = res.data;
+                // console.log("RESULT STORED",result);
+                // console.log("TOKEN IS:",result.meta);
+                dispatch(loginact({
+                    id:result.data.id,
+                    name:result.data.name,
+                    email:result.data.email,
+                    token:result.meta.token
+                }));
+                // console.log(store.getState());
+                
             })
-            .catch(error=>console.log(error))
-            // localStorage.setItem("token",tokenid);
-            // var x = localStorage.getItem("token")
-            // console.log("Session Storage Item: ",x);
+            .catch(error=>{
+                alert('Email or Password is wrong!')
+            })
+            // console.log("RESULT OUTSIDE REPONSE:",result);
+            console.log("token selected from code",token);
+            // console.log("Store outside fetch",store.getState());
+            // store.subscribe(()=>{
+            //     console.log('value in state',store.getState().logintodash.token);
+            // })
+            // if(token.token){
+            //     return <Dashboard/>
+            // }
+            
+            
+            
         }
     }
     return (
@@ -60,8 +75,22 @@ const Login = () => {
             <button type="submit" className="btn btn-primary my-3">Login</button>
             </form>
             <Link to="/register">Don't Have an Account? Make One!</Link>
+            {/* <h1>Accessing Store:</h1>
+            <h1>{token.id}</h1>
+            <h1>{token.name}</h1>
+            <h1>{token.email}</h1>
+            <h1>{token.token}</h1> */}
+            
         </div>
     )
 }
 
+
+  
+//   const mapDispatchToProps = dispatch => ({
+//     loginact: result => dispatch(loginact(result))
+//   });
+  
+
+// export default connect(null, mapDispatchToProps)(Login)
 export default Login

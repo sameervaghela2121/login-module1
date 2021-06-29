@@ -1,13 +1,31 @@
-// const token;
-// const initialState = {
-//     token:"",
-// }
+// this is reducer
+const lastid = 1;
+const initialState = {
+    id: "",
+    name: "",
+    email: "",
+    token: "",
+};
+const logintodash = (state = initialState,action) => {
+    switch(action.type){
+        case "LOGGINGIN" :
+            // console.log("this is triggering")
+            return {
+                ...state,
+                id: action.payload.id,
+                name: action.payload.name,
+                email: action.payload.email,
+                token: action.payload.token
+                
+                
+            }
+        case "LOGGEDINFAIL" : return state;
+        case "LOGGINGOUT" :
+            return {
+                ...state
+            }
+        default : return state;
+    }
 
-// const RLOGON = (state = initialState, action) => {
-//     if(action.type == "STORELOGONDETAILS"){
-//         return token;
-//     }
-
-// }
-
-// export default RLOGON;
+}
+export default logintodash;
