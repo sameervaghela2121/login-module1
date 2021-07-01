@@ -13,11 +13,14 @@
 //This is the main reducer in which all reducers are held or combined
 
 import logintodash from "./logon";
+import postreducerfun from "./postReducer";
 
 import { combineReducers } from "redux";
 
  const rootReducer = combineReducers({
-     logintodash
+     logintodash,
+     postreducerfun
+
  })
 
  export default rootReducer;

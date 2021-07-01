@@ -1,0 +1,34 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "description": "json desc",
+      "author": "typicode"
+    },
+    {
+      "title": "TEMP TITLE",
+      "description": "<p>TEMP PARA DESC</p>",
+      "author": "TEMP AUTHORSSS NAMEE",
+      "id": 4
+    },
+    {
+      "title": "temp1",
+      "description": "<p>temp1 para</p>",
+      "author": "temp1authorrrrrrr",
+      "id": 5
+    },
+    {
+      "title": "How to make a Post?",
+      "description": "<p>This is how to make a <i><strong>POST</strong></i></p>",
+      "author": "SAMEER VAGHELA",
+      "id": 6
+    },
+    {
+      "title": "Hey ",
+      "description": "<p>Hey parqa</p>",
+      "author": "Hy",
+      "id": 7
+    }
+  ]
+}

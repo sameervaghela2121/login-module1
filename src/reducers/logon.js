@@ -1,5 +1,5 @@
 // this is reducer
-const lastid = 1;
+// const lastid = 1;
 const initialState = {
     id: "",
     name: "",
@@ -21,9 +21,7 @@ const logintodash = (state = initialState,action) => {
             }
         case "LOGGEDINFAIL" : return state;
         case "LOGGINGOUT" :
-            return {
-                ...state
-            }
+            return state == null
         default : return state;
     }
 

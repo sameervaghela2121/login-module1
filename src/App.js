@@ -11,15 +11,19 @@ import {
   Route,
 } from "react-router-dom";
 import Dashboard from './Dashboard';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const token = useSelector(state => state.logintodash);
+  // const postedcall = useSelector(state => state.postreducerfun);
+  // console.log("POSTED APP>JS",postedcall);
   return (
     <div className="App">
       <Router>
       <Header/>
       <Switch>
         <Route exact path="/" component={Welcome}></Route>
-        <Route exact path="/login" component={Login}></Route>
+        <Route exact path="/login" component={(token.token)?Dashboard :Login}></Route>
         <Route exact path="/register" component={Register}></Route>
         <Route exact path="/dashboard" component={Dashboard}></Route>
       </Switch>

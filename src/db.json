@@ -1,0 +1,16 @@
+{
+    "posts": [
+        { 
+            "id": 1, 
+            "title": "temp title", 
+            "description": "This is temp desc", 
+            "author": "temp auth" 
+        },
+        { 
+            "id": 1, 
+            "title": "temp title", 
+            "description": "This is temp desc", 
+            "author": "temp auth" 
+        }
+    ]
+}

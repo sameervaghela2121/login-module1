@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import { Link, NavLink, Redirect } from 'react-router-dom'
-import Dashboard from "./Dashboard";
-import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { loginact } from "./actions/index";
-import logintodash from './reducers/logon';
-import store from './store';
+// import logintodash from './reducers/logon';
 
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const config = { headers: { 'Content-Type': 'application/json' }};
-    const token = useSelector(state => state.logintodash);
+    // const token = useSelector(state => state.logintodash);
     const dispatch = useDispatch();
     var result;
     
@@ -47,7 +45,9 @@ const Login = () => {
                 alert('Email or Password is wrong!')
             })
             // console.log("RESULT OUTSIDE REPONSE:",result);
-            console.log("token selected from code",token);
+
+            // console.log("token selected from code",token);
+
             // console.log("Store outside fetch",store.getState());
             // store.subscribe(()=>{
             //     console.log('value in state',store.getState().logintodash.token);
@@ -75,12 +75,6 @@ const Login = () => {
             <button type="submit" className="btn btn-primary my-3">Login</button>
             </form>
             <Link to="/register">Don't Have an Account? Make One!</Link>
-            {/* <h1>Accessing Store:</h1>
-            <h1>{token.id}</h1>
-            <h1>{token.name}</h1>
-            <h1>{token.email}</h1>
-            <h1>{token.token}</h1> */}
-            
         </div>
     )
 }

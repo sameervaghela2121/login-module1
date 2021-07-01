@@ -1,5 +1,7 @@
 //This are the action which I have to perform
 // ACTIONS ARE HERE
+
+//Login Logout Action Begins Here
 export const loginact = (result) => {
 
     // console.log("Actions are getting data",result)
@@ -14,20 +16,35 @@ export const loginact = (result) => {
     }
 }
 
-export const loginactsuccess = () => {
-    return {
-        type: "LOGGEDINSUCCESS"
-    }
-}
-
-export const loginactfail = () => {
-    return {
-        type: "LOGGEDINFAIL"
-    }
-}
-
 export const logoutact = () => {
     return {
-        type: "LOGGINGOUT"
+        type: "LOGGINGOUT",
+        payload: {
+            id: null,
+            name: null,
+            email: null,
+            token: null,
+        }
     }
 }
+//Login Logout Action Ends Here
+
+//Post Action Starts Here
+
+export const posttodash = (result) => {
+    console.log("Actions are getting data",result)
+    // console.log("Actions are getting title",result.title)
+    // console.log("Actions are getting description",result.description)
+    // console.log("Actions are getting author",result.author)
+    return {
+        type: "POSTINGPOST",
+        payload: {
+            title: result.title,
+            description: result.description,
+            author: result.author,
+        }
+    }
+}
+
+
+//Post Action Ends Here
