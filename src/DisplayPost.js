@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import ReactHtmlParser from 'react-html-parser';
+import { Link } from 'react-router-dom';
+import './DisplayPost.css';
 
 
 const DisplayPost = () => {
@@ -13,19 +15,23 @@ const DisplayPost = () => {
         })
         .catch((error)=>console.log(error))
     return (
-        <div style={{"display":"flex"}}>
+        <div className="container-sam my-3">
             {
                 fdata.map((d)=>{
                     return(
                         <>
-                            <div class="card" style={{"width" : "18rem"}}>
-                            {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
-                            <div class="card-body">
-                                <h5>{d.title}</h5>
-                                <p>{ReactHtmlParser(d.description)}</p>
-                                <a>{d.author}</a>
+                            <div class="card bg-light border-primary mx-3" style={{"width" : "18rem"}}>
+                                {/* <img class="card-img-top" src="..." alt="Card image cap"/> */}
+                                <div class="card-body" key={d.id}>
+                                    <h4>{d.title}</h4>
+                                    <hr className="bg-primary"/>
+                                    <p>{ReactHtmlParser(d.description)}</p>
+                                    <hr className="bg-primary"/>
+                                    <p>Author: {d.author}</p>
+                                    {/* <Link to='/blog-page'>Read More</Link> */}
+                                </div>
                             </div>
-                            </div>
+                            <br />
                         </>
                     )
                 })

@@ -38,7 +38,7 @@ const Register = () => {
                 <input type="text" className="form-control" value={name} name="name" onChange={(e)=>setName(e.target.value)} placeholder="Enter Name"/>
             </div>
             <div className="form-group">
-                <label htmlFor="exampleInputEmail1">Email address</label>
+                <label htmlFor="exampleInputEmail1">Email Address</label>
                 <input type="email" className="form-control" value={email} name="email" onChange={(e)=>setEmail(e.target.value)} placeholder="Enter email"/>
             </div>
             <div className="form-group">

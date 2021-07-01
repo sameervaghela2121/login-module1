@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import ReactHtmlParser from 'react-html-parser';
+// import ReactHtmlParser from 'react-html-parser';
 import { useDispatch } from 'react-redux';
 import { posttodash } from "./actions/index";
 import { useSelector } from 'react-redux';
@@ -13,7 +13,6 @@ const NewPost = () => {
     const [title, setTitle] = useState("");
     const [author, setAuthor] = useState("");
     const [description, setDescription] = useState("");
-    const [fetcheddata, setFetcheddata] = useState([]);
     const dispatch = useDispatch();
     const postedcall = useSelector(state => state.postreducerfun);
 
@@ -41,6 +40,9 @@ const NewPost = () => {
                 author:author,
             }));
             axios.post("http://localhost:3000/posts", {title:title,description:description,author:author })
+            setTitle('');
+            setDescription('');
+            setAuthor('');
 
 
             
@@ -66,12 +68,12 @@ const NewPost = () => {
                     <label htmlFor="exampleInputPassword1">Author</label>
                     <input type="text" className="form-control" value={author} onChange={(e)=>{setAuthor(e.target.value)}} id="exampleInputPassword1" placeholder="Enter Author's Name"/>
                 </div>
-                <div>{title}</div>
-                <div>{ReactHtmlParser(description)}</div>
-                <div>{author}</div>
                 <button type="submit" className="btn btn-primary my-3">Post!</button>
                 </form>
                 
+                {/* <div>{title}</div>
+                <div>{ReactHtmlParser(description)}</div>
+                <div>{author}</div> */}
 
                 
 

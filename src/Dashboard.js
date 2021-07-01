@@ -8,7 +8,7 @@ import DisplayPost from './DisplayPost';
 const Dashboard = () => {
     const dispatch = useDispatch();
     const token = useSelector(state => state.logintodash);
-    const postedcall = useSelector(state => state.postreducerfun);
+    // const postedcall = useSelector(state => state.postreducerfun);
     // console.log(token)
     const onlogoutbtn = () => {
         dispatch(logoutact());
@@ -18,7 +18,7 @@ const Dashboard = () => {
     return (
         <div>
             <h1>Welcome to Dashboard {token.name}</h1>
-            <button onClick={()=>{onlogoutbtn()}} >Log-Out</button>
+            <button className="btn btn-danger" onClick={()=>{onlogoutbtn()}} >Log-Out</button>
             <NewPost/>
             <h2>Post Available!!</h2>
                 <div>
