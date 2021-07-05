@@ -21,7 +21,7 @@ const Dashboard = () => {
             <button className="btn btn-danger" onClick={()=>{onlogoutbtn()}} >Log-Out</button>
             <NewPost/>
             <h2>Post Available!!</h2>
-                <div>
+                <div className="container my-3">
                     <DisplayPost/>
                 </div>
         </div>

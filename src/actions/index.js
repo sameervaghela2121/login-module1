@@ -40,6 +40,7 @@ export const posttodash = (result) => {
         type: "POSTINGPOST",
         payload: {
             title: result.title,
+            category: result.category,
             description: result.description,
             author: result.author,
         }

@@ -3,62 +3,117 @@
     {
       "id": 1,
       "title": "json-server",
+      "image": "",
+      "category": "",
       "description": "json desc",
       "author": "typicode"
     },
     {
       "title": "TEMP TITLE",
+      "image": "",
+      "category": "",
       "description": "<p>TEMP PARA DESC</p>",
       "author": "TEMP AUTHORSSS NAMEE",
       "id": 4
     },
     {
       "title": "temp1",
+      "image": "",
+      "category": "",
       "description": "<p>temp1 para</p>",
       "author": "temp1authorrrrrrr",
       "id": 5
     },
     {
       "title": "How to make a Post?",
+      "image": "",
+      "category": "",
       "description": "<p>This is how to make a <i><strong>POST</strong></i></p>",
       "author": "SAMEER VAGHELA",
       "id": 6
     },
     {
       "title": "Hey ",
+      "image": "",
+      "category": "",
       "description": "<p>Hey parqa</p>",
       "author": "Hy",
       "id": 7
     },
     {
       "title": "Temp2",
+      "image": "",
+      "category": "",
       "description": "<p>Temp2</p>",
       "author": "Temp2",
       "id": 8
     },
     {
       "title": "Temp3",
+      "image": "",
+      "category": "",
       "description": "<p>Temp3</p>",
       "author": "Temp3",
       "id": 9
     },
     {
       "title": "Temp4",
+      "image": "",
+      "category": "",
       "description": "<p>Temp4</p>",
       "author": "Temp5",
       "id": 10
     },
     {
       "title": "Temp5",
+      "image": "",
+      "category": "",
       "description": "<p>Temp5</p>",
       "author": "Temp5",
       "id": 11
     },
     {
       "title": "Temp6",
+      "image": "",
+      "category": "",
       "description": "<p>Temp6</p>",
       "author": "Temp6",
       "id": 12
+    },
+    {
+      "title": "Checking Redux",
+      "category": "Redux Cat",
+      "description": "<p>REDUX DESC</p>",
+      "author": "REDUX AUTH",
+      "id": 13
+    },
+    {
+      "title": "dasd",
+      "category": "dsad",
+      "description": "<p>dsad</p>",
+      "author": "dass",
+      "id": 14
+    },
+    {
+      "title": "Checking 15 post",
+      "category": "15 Cat",
+      "description": "<p><strong>15</strong> <i>Desc</i></p>",
+      "author": "15 AUTH",
+      "id": 15
+    },
+    {
+      "title": "Temp2",
+      "category": "dsdasdasd",
+      "description": "<p>asadasdasdasdassd</p>",
+      "author": "dasdasdas",
+      "id": 16
+    },
+    {
+      "title": "This is New Title on july 5",
+      "category": "JULY 5 New Title",
+      "description": "<p><strong>JULY</strong> 5 <i>DESCRIPTION</i></p>",
+      "author": "JULY 5 Author",
+      "id": 17
     }
   ]
 }

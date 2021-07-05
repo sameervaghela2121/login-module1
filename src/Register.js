@@ -43,11 +43,11 @@ const Register = () => {
             </div>
             <div className="form-group">
                 <label htmlFor="exampleInputPassword1">Password</label>
-                <input type="password" className="form-control" value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder="Password"/>
+                <input type="password" className="form-control" value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder="Password" autoComplete="on"/>
             </div>
             <div className="form-group">
                 <label htmlFor="exampleInputPassword1">Confirm Password</label>
-                <input type="password" className="form-control" value={password_confirmation} onChange={(e)=>{setPassword_confirmation(e.target.value)}} placeholder="Confirm Password"/>
+                <input type="password" className="form-control" value={password_confirmation} onChange={(e)=>{setPassword_confirmation(e.target.value)}} placeholder="Confirm Password" autoComplete="on"/>
             </div>
             <button type="submit" className="btn btn-primary my-3">Register</button>
             </form>

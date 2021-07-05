@@ -1,6 +1,7 @@
 const pd = {
     title: "",
     description: "",
+    category: "",
     author: ""
 };
 
@@ -12,6 +13,7 @@ const postreducerfun = (state = pd,action) => {
             return {
                 ...state,
                 title: action.payload.title,
+                category: action.payload.category,
                 description: action.payload.description,
                 author: action.payload.author
                 

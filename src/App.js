@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import Dashboard from './Dashboard';
 import { useSelector } from 'react-redux';
+import BlogPage from './BlogPage';
 
 function App() {
   const token = useSelector(state => state.logintodash);
@@ -26,6 +27,7 @@ function App() {
         <Route exact path="/login" component={(token.token)?Dashboard :Login}></Route>
         <Route exact path="/register" component={Register}></Route>
         <Route exact path="/dashboard" component={Dashboard}></Route>
+        <Route exact path="/blogpage" component={BlogPage}></Route>
       </Switch>
       {/* <Apitemp/> */}
       </Router>
